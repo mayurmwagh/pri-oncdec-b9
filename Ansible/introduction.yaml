@@ -1,0 +1,20 @@
+
+
+Playbook = yaml and yaml is all about indentation
+    - indedation
+python = indedation 
+
+fruits{
+apple 
+orange
+greps
+kiwi
+pineapple
+}
+
+fruits:
+  - apple
+  - orange
+  - greps
+  - pineapple
+
