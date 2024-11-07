@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingerss
+  namespace: nginx-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: a72e57c68b6464ca182e4d043196a77c-547833977.us-east-1.elb.amazonaws.com
+      http:
+        paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: home-srv
+              port:
+                number: 8080
+        - pathType: Prefix
+          path: /mobile/
+          backend:
+            service:
+              name: mobile-srv
+              port:
+                number: 8082
+        - pathType: Prefix
+          path: /laptop/
+          backend:
+            service:
+              name: laptop-srv
+              port:
+                number: 8081
+        

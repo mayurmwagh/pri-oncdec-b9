@@ -1,0 +1,35 @@
+A DaemonSet is a Kubernetes resource that ensures a specific pod runs on all
+(or some) nodes in a cluster. It is particularly useful for deploying background 
+services or system-level applications that need to run on every node
+
+
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd
+spec:
+  selector:
+    matchLabels:
+      name: fluentd
+  template:
+    metadata:
+      labels:
+        name: fluentd
+    spec:
+      containers:
+        - name: fluentd-elasticsearch
+          image: quay.io/fluentd_elasticsearch/fluentd:latest
+
+
+
+
+
+
+
+
+Registries: we are storing a docker images in that 
+Docker hub
+ECR
+ACR 
+quay  

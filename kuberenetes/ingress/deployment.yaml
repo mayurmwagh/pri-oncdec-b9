@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home
+  labels:
+    app: home
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: home
+  template:
+    metadata:
+      labels:
+        app: home
+    spec:
+      containers:
+        - name: home
+          image: 793820491937.dkr.ecr.us-east-1.amazonaws.com/home:latest
+          ports:
+            - containerPort: 80
+
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laptop
+  labels:
+    app: laptop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: laptop
+  template:
+    metadata:
+      labels:
+        app: laptop
+    spec:
+      containers:
+        - name: laptop
+          image: 793820491937.dkr.ecr.us-east-1.amazonaws.com/laptop:latest
+          ports:
+            - containerPort: 80
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobile
+  labels:
+    app: mobile
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mobile
+  template:
+    metadata:
+      labels:
+        app: mobile
+    spec:
+      containers:
+        - name: laptop
+          image: 793820491937.dkr.ecr.us-east-1.amazonaws.com/mobile:latest
+          ports:
+            - containerPort: 80

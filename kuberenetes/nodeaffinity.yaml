@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-deployment 
+  namespace: fleetman
+spec:
+  selector: 
+    matchLabels: 
+      mylabelsname: webapp2
+  replicas: 3      
+  template: # it will define a pods
+    metadata: 
+      name: webapp
+      labels:
+        mylabelsname: webapp2
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: disktype
+                operator: In
+                values:
+                - ssd        
+      containers:
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+        resources:
+          limits:
+            memory: 600Mi
+            cpu: 1
+          requests:
+            memory: 300Mi
+            cpu: 500m
+                
+
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-webapp
+  namespace: fleetman
+  labels:
+    mylabelsname: webapp2
+spec: 
+  selector:
+    mylabelsname: webapp2
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  type: LoadBalancer  
