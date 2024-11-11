@@ -5,5 +5,7 @@
   tasks: 
     - debug:
         msg: Hello {{URL}}
+      vars:
+        URL: local.cloudblitz.in
     - debug:
         msg: My Url is {{URL}}  
