@@ -5,4 +5,5 @@
   tasks: 
     - debug:
         msg: Hello {{URL}}
-      
+    - debug:
+        msg: My Url is {{URL}}  
