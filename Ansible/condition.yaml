@@ -1,0 +1,6 @@
+- name: Condition yaml
+  hosts: all
+  tasks:
+    - name: Print Msg
+      debug:
+        msg: this is my ubuntu server 
