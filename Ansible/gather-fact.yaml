@@ -1,0 +1,6 @@
+- name: Gathering fact 
+  hosts: all
+  tasks:
+    - name: Show Gathered Facts
+      debug:
+       msg: "{{ ansible_facts }}"
