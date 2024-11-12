@@ -4,4 +4,4 @@
     - name: Print Msg
       debug:
         msg: this is my ubuntu server 
-      when: ansible_distribution == "RedHat"
+      when: ansible_distribution == "Ubuntu"
