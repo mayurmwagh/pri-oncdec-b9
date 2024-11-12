@@ -3,9 +3,9 @@
   tasks:
     - name: print-msg1
       debug:
-        msg: this is {{item}}
+        msg: I love {{item}}
       loop:
-        - msg1
-        - msg2
-        - msg3
-        - msg4
+        - Banana
+        - Pineapple
+        - Apple
+        - Kiwi
