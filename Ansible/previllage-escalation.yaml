@@ -3,6 +3,6 @@
   vars: 
     PKG: apache2 
   tasks:
-    - packages:
+    - package:
         name: "{{PKG}}"
         state: absent 
