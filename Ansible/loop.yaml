@@ -3,13 +3,9 @@
   tasks:
     - name: print-msg1
       debug:
-        msg: this is msg1
-    - name: print-msg2
-      debug:
-        msg: this is msg2
-    - name: print-msg3
-      debug:
-        msg: this is msg3
-    - name: print-msg4
-      debug:
-        msg: this is msg4
+        msg: this is {{item}}
+      loop:
+        - msg1
+        - msg2
+        - msg3
+        - msg4
