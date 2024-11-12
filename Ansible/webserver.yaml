@@ -1,5 +1,6 @@
 - name: webserver playbook
   hosts: all
+  become: true
   tasks:
     - apt:
         name: "{{item}}"
@@ -8,7 +9,7 @@
         - apache2
         - git
         - wget
-        - uzip
+        - unzip
       when: ansible_distribution == "Ubuntu"
     
     - yum:
@@ -18,7 +19,7 @@
         - httpd
         - git
         - wget
-        - uzip
+        - unzip
       when: ansible_distribution == "Redhat"   
 
     - systemd_service:
