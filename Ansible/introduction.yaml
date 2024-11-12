@@ -31,4 +31,12 @@ variable:
     local variable
     file variable
     Global variable
+
+
+  if (x==1){
+      perform taks
+  }
+  else{
+      perform other task 
+  }
     
