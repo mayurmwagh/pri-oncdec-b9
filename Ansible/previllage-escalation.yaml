@@ -1,0 +1,8 @@
+- name: install package 
+  hosts: all
+  vars: 
+    PKG: apache2 
+  tasks:
+    - packages:
+        name: "{{PKG}}"
+        state: absent 

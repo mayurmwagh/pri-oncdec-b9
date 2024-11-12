@@ -27,7 +27,8 @@ variable:
 
 
 variable:
-    local 
-    file 
-    Global 
+    cli variable
+    local variable
+    file variable
+    Global variable
     
