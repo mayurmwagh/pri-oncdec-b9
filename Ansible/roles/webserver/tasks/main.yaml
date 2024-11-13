@@ -1,11 +1,16 @@
-- name: install package
-  become: true 
-  apt:
-    name: apache2
-    state: present
+- name: Download template
+  get_url:
+    url: https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip
+    dest: /opt
+
+# - name: install package
+#   become: true 
+#   apt:
+#     name: apache2
+#     state: present
   
-- name: Copy html Content
-  become: true
-  copy:
-    src: index.html
-    dest: /var/www/html/index.html
+# - name: Copy html Content
+#   become: true
+#   copy:
+#     src: index.html
+#     dest: /var/www/html/index.html
