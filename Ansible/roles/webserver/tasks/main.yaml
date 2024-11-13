@@ -1,0 +1,10 @@
+- name: install package
+  become: true 
+  apt:
+    name: apache2
+    state: present
+  
+- name: Copy html Content
+  copy:
+    src: Ansible/roles/webserver/files/index.html
+    dest: /var/www/html/index.html

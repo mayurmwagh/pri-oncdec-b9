@@ -1,0 +1,4 @@
+- name: webser and appserver
+  hosts: all
+  roles:
+    - webserver 
