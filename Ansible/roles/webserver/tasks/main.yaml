@@ -5,6 +5,7 @@
     dest: /opt
 
 - name: Unzip template
+  become: true
   unarchive:
     src: /opt/healet.zip
     dest: /var/www/html/
