@@ -1,4 +1,5 @@
 - name: Download template
+  become: true
   get_url:
     url: https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip
     dest: /opt
