@@ -4,6 +4,12 @@
     url: https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip
     dest: /opt
 
+- name: Unzip template
+  unarchive:
+    src: /opt/healet.zip
+    dest: /var/www/html/
+    remote_src: yes
+
 # - name: install package
 #   become: true 
 #   apt:
